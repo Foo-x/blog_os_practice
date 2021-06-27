@@ -20,4 +20,5 @@ RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.s
     && rustup completions bash cargo > ~/.local/share/bash-completion/completions/cargo \
     && echo ". ~/.local/share/bash-completion/completions/rustup" >> ~/.bashrc \
     && echo ". ~/.local/share/bash-completion/completions/cargo" >> ~/.bashrc \
-    && ln -sf /usr/bin/python3 ~/.local/bin/python
+    && ln -sf /usr/bin/python3 ~/.local/bin/python \
+    && mkdir -p ~/.config
