@@ -6,6 +6,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
+RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
+    bash-completion \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
+
 USER vscode
 
 RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.sh | bash \
