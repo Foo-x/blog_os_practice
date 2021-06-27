@@ -8,6 +8,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
     bash-completion \
+    hub \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
