@@ -8,6 +8,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
     bash-completion \
+    qemu \
+    qemu-system-x86 \
     && curl -L https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.deb -o /tmp/gh.deb \
     && apt install -y --no-install-recommends /tmp/gh.deb \
     && apt clean \
@@ -18,4 +20,9 @@ USER vscode
 RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.sh | bash \
     && mkdir -p ~/.config \
     && mkdir -p ~/.local/bin \
-    && ln -sf /usr/bin/python3 ~/.local/bin/python
+    && ln -sf /usr/bin/python3 ~/.local/bin/python \
+
+RUN rustup override set nightly \
+    && rustup component add rust-src \
+    && cargo install bootimage \
+    && rustup component add llvm-tools-preview
