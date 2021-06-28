@@ -8,17 +8,14 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
     bash-completion \
-    hub \
+    && curl -L https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.deb -o /tmp/gh.deb \
+    && apt install -y --no-install-recommends /tmp/gh.deb \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
 USER vscode
 
 RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.sh | bash \
-    && mkdir -p ~/.local/share/bash-completion/completions \
-    && rustup completions bash > ~/.local/share/bash-completion/completions/rustup \
-    && rustup completions bash cargo > ~/.local/share/bash-completion/completions/cargo \
-    && echo ". ~/.local/share/bash-completion/completions/rustup" >> ~/.bashrc \
-    && echo ". ~/.local/share/bash-completion/completions/cargo" >> ~/.bashrc \
-    && ln -sf /usr/bin/python3 ~/.local/bin/python \
-    && mkdir -p ~/.config
+    && mkdir -p ~/.config \
+    && mkdir -p ~/.local/bin \
+    && ln -sf /usr/bin/python3 ~/.local/bin/python
