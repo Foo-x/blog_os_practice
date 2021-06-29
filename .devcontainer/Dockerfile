@@ -20,7 +20,7 @@ USER vscode
 RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.sh | bash \
     && mkdir -p ~/.config \
     && mkdir -p ~/.local/bin \
-    && ln -sf /usr/bin/python3 ~/.local/bin/python \
+    && ln -sf /usr/bin/python3 ~/.local/bin/python
 
 RUN rustup override set nightly \
     && rustup component add rust-src \
