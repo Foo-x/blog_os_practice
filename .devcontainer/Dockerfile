@@ -8,6 +8,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
     bash-completion \
+    && apt install -y \
     qemu \
     qemu-system-x86 \
     && curl -L https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.deb -o /tmp/gh.deb \
