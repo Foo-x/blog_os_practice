@@ -3,6 +3,7 @@
         "post-01/blog_os/Cargo.toml",
         "post-02/blog_os/Cargo.toml",
         "post-03/blog_os/Cargo.toml",
-        "post-04/blog_os/Cargo.toml"
+        "post-04/blog_os/Cargo.toml",
+        "post-05/blog_os/Cargo.toml",
     ]
 }
