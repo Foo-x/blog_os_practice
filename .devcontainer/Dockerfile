@@ -26,4 +26,5 @@ RUN curl -fsSL https://raw.githubusercontent.com/Foo-x/dotfiles/master/install.s
 RUN rustup override set nightly \
     && rustup component add rust-src \
     && cargo install bootimage \
-    && rustup component add llvm-tools-preview
+    && rustup component add llvm-tools-preview \
+    && rustup component add rustfmt --toolchain nightly-x86_64-unknown-linux-gnu
