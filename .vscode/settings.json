@@ -7,5 +7,6 @@
         "post-05/blog_os/Cargo.toml",
         "post-06/blog_os/Cargo.toml",
         "post-07/blog_os/Cargo.toml",
+        "post-08/blog_os/Cargo.toml",
     ]
 }
