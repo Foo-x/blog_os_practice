@@ -11,5 +11,6 @@
         "post-09/blog_os/Cargo.toml",
         "post-10/blog_os/Cargo.toml",
         "post-11/blog_os/Cargo.toml",
+        "post-12/blog_os/Cargo.toml",
     ]
 }
